@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:savora_app/Delivery/features/driver/services/driver_router.dart';
+import 'package:savora_app/chef/main_layout.dart';
 import 'package:savora_app/core/theme/app_theme.dart';
 import '../../../../core/theme/theme_notifier.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -159,6 +160,13 @@ class _LoginScreenState extends State<LoginScreen>
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
           builder: (_) => const DriverAppWrapper(),
+        ),
+        (route) => false,
+      );
+    } else if (finalPhone == '1036392266') {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (_) => const ChefAppWrapper(),
         ),
         (route) => false,
       );
@@ -1477,6 +1485,27 @@ class DriverAppWrapper extends StatelessWidget {
         initialLocation: '/driver/dashboard',
         routes: driverRoutes,
       ),
+    );
+  }
+}
+
+class ChefAppWrapper extends StatelessWidget {
+  const ChefAppWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Savora Chef',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFFD05024),
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
+        fontFamily: 'DM Sans',
+      ),
+      home: const MainLayout(),
     );
   }
 }
