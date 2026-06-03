@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:savora_app/Delivery/features/customer/auth/screens/login_screen.dart';
+import 'package:savora_app/features/customer/auth/screens/login_screen.dart';
 import '../../../../core/theme/theme_notifier.dart';
 import '../../providers/auth_provider.dart';
 
@@ -175,11 +175,11 @@ class DriverProfileScreen extends ConsumerWidget {
                 ),
               ),
               onPressed: () {
-                
-Navigator.push(
-  context,
-  MaterialPageRoute(builder: (context) => LoginScreen()),
-);              },
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  (route) => false,
+                );
+              },
               icon: const Icon(Icons.logout),
               label: const Text(
                 'Sign Out',
