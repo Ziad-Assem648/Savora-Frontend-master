@@ -468,7 +468,7 @@ class _ProfileScreenState extends State<ProfileScreen>
     return GestureDetector(
       onTap: () {
         HapticFeedback.mediumImpact();
-        Navigator.of(context).pushAndRemoveUntil(
+        Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const LoginScreen()),
           (route) => false,
         );

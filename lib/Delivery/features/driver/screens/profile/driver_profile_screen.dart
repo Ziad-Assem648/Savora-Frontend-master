@@ -175,7 +175,7 @@ class DriverProfileScreen extends ConsumerWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).pushAndRemoveUntil(
+                Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
                   MaterialPageRoute(builder: (_) => const LoginScreen()),
                   (route) => false,
                 );
