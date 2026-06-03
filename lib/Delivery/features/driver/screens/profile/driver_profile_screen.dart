@@ -110,19 +110,19 @@ class DriverProfileScreen extends ConsumerWidget {
           _SectionHeader(title: 'Account'),
 
           _SectionCard(children: [
-            _ProfileMenuItem(
+            const _ProfileMenuItem(
               icon: Icons.directions_car_outlined,
               title: 'Vehicle Information',
               subtitle: 'Toyota Prius • ABC-1234',
             ),
             Divider(color: cs.outline.withOpacity(0.2)),
-            _ProfileMenuItem(
+           const _ProfileMenuItem(
               icon: Icons.credit_card_outlined,
               title: 'Payout Methods',
               subtitle: 'Bank account connected',
             ),
             Divider(color: cs.outline.withOpacity(0.2)),
-            _ProfileMenuItem(
+           const _ProfileMenuItem(
               icon: Icons.shield_outlined,
               title: 'Security',
               subtitle: 'Password & verification',
@@ -136,13 +136,13 @@ class DriverProfileScreen extends ConsumerWidget {
           _SectionCard(children: [
              _ThemeToggleTile(),
             Divider(color: cs.outline.withOpacity(0.2)),
-            _ProfileMenuItem(
+            const _ProfileMenuItem(
               icon: Icons.navigation_outlined,
               title: 'Navigation',
               subtitle: 'Google Maps',
             ),
             Divider(color: cs.outline.withOpacity(0.2)),
-            _ProfileMenuItem(
+            const _ProfileMenuItem(
               icon: Icons.notifications_outlined,
               title: 'Notifications',
               subtitle: 'Enabled',
@@ -151,9 +151,9 @@ class DriverProfileScreen extends ConsumerWidget {
 
           const SizedBox(height: 20),
 
-          _SectionHeader(title: 'Support'),
+          const _SectionHeader(title: 'Support'),
 
-          _SectionCard(children: [
+          const _SectionCard(children: [
             _ProfileMenuItem(
               icon: Icons.help_outline_rounded,
               title: 'Help Center',
